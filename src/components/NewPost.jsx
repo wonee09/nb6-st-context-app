@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { PostsContext } from "../shared/Router";
 
-const NewPost = ({ setPosts }) => {
+const NewPost = () => {
   const navigate = useNavigate();
+  const { setPosts } = useContext(PostsContext);
 
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");

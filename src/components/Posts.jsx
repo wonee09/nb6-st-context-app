@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { PostsContext } from "../shared/Router";
 
-const Posts = ({ posts }) => {
+const Posts = () => {
   const navigate = useNavigate();
+  const { posts } = useContext(PostsContext);
 
   return (
     <main>

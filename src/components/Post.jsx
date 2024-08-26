@@ -1,13 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
+import { PostsContext } from "../shared/Router";
 
-const Post = ({ posts }) => {
+const Post = () => {
   const { id } = useParams();
-  console.log("posts => ", posts);
+  const { posts } = useContext(PostsContext);
 
   const post = posts.find((post) => post.id === Number(id));
-
-  console.log("post => ", post);
 
   return (
     <main>
